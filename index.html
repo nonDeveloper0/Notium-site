@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Notium은 내 PC에서 기록하고 정리하는 개인용 로컬 우선 노트 앱입니다."
-    />
+    <meta name="description" content="Notium은 기록을 기기 안에 보관하는 개인용 로컬 우선 노트 앱입니다." />
     <title>Notium — 내 기록의 자리</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -15,68 +12,33 @@
     <header>
       <a class="brand" href="./">Notium<span>개인용 노트 앱</span></a>
       <nav aria-label="주 메뉴">
-        <a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="data-deletion.html">데이터 삭제</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero">
-        <p class="eyebrow">LOCAL-FIRST · WINDOWS</p>
+        <p class="eyebrow">🗒️ LOCAL-FIRST · WINDOWS · ANDROID</p>
         <h1>생각을 적고,<br />내 공간에 쌓다.</h1>
-        <p class="lead">
-          Notium은 내 PC를 중심으로 작동하는 개인용 노트 앱입니다. 일상의 메모부터 업무 기록까지,
-          폴더와 페이지로 정리하고 링크로 연결하세요.
-        </p>
-        <a class="button" href="#about">Notium 알아보기</a>
-        <p class="status">개발 중인 개인 프로젝트입니다. 공개 다운로드는 아직 제공하지 않습니다.</p>
+        <p class="lead">Notium은 페이지와 폴더로 기록을 정리하는 개인용 노트 앱입니다. 노트는 기기 안에 저장하고, 원할 때 내 Google Drive 앱 전용 공간에 동기화할 수 있습니다.</p>
+        <a class="button" href="https://github.com/nonDeveloper0/Notium-releases/releases/latest">⬇️ 다운로드</a>
+        <p class="status">Windows 데스크톱과 Android를 제공합니다. iOS는 준비 중이며 현재 다운로드할 수 없습니다.</p>
       </section>
-      <section id="about" class="features" aria-label="주요 기능">
-        <article>
-          <p class="number">01 / 기록</p>
-          <h2>내 PC에서 시작</h2>
-          <p>
-            블록 편집기로 글과 체크리스트를 작성합니다. 노트는 로컬에 저장되어 인터넷 연결 없이도
-            작성하고 열람할 수 있습니다.
-          </p>
-        </article>
-        <article>
-          <p class="number">02 / 정리</p>
-          <h2>흩어진 기록을 연결</h2>
-          <p>
-            폴더와 페이지, 페이지 링크와 백링크, 태그로 기록을 정리합니다. 이미지와 파일은 노트에
-            첨부하고 보관함에서 찾습니다.
-          </p>
-        </article>
-        <article>
-          <p class="number">03 / 동기화 준비 중</p>
-          <h2>내 Google Drive로</h2>
-          <p>
-            사용자가 연결한 Google 계정의 Notium 전용 숨김 공간을 이용하는 동기화를 준비하고
-            있습니다. 일반 Drive 파일 전체에 대한 접근은 요청하지 않습니다.
-          </p>
-        </article>
+      <section class="features" aria-label="주요 기능">
+        <article><p class="number">01 / 기록</p><h2>내 기기에 저장</h2><p>SQLite와 파일로 노트와 첨부를 저장합니다. 운영자는 노트를 보관하는 서버를 운영하지 않습니다.</p></article>
+        <article><p class="number">02 / 정리</p><h2>기록을 연결</h2><p>페이지·폴더 트리, 블록 편집, 링크와 백링크, 태그, 일지, 할 일, 검색과 버전 기록을 제공합니다.</p></article>
+        <article><p class="number">03 / 선택 동기화</p><h2>내 Google Drive로</h2><p>Google 계정으로 로그인하면 본인 Drive의 Notium 전용 숨김 공간을 동기화에 사용할 수 있습니다. 다른 Drive 파일에는 접근하지 않습니다.</p></article>
       </section>
       <section class="notice">
-        <h2>데이터가 머무는 곳을 명확하게.</h2>
-        <p>
-          별도의 Notium 노트 보관 서버를 운영하지 않습니다. Google 연결 기능의 처리 정보, 저장 위치,
-          권한 철회와 삭제 방법은 개인정보처리방침에서 확인할 수 있습니다.
-        </p>
-        <a href="privacy.html">개인정보처리방침 읽기</a>
+        <h2>기록의 위치와 흐름을 확인하세요.</h2>
+        <p>동기화와 AI 연결은 사용자가 선택하는 기능입니다. 처리 정보, 보관 위치, 삭제 절차와 책임 범위는 정책 페이지에 안내합니다.</p>
+        <p><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="data-deletion.html">데이터 삭제 안내</a></p>
       </section>
       <section class="contact">
-        <h2>문의</h2>
-        <p>운영자: nonDeveloper0</p>
-        <p>
-          <a href="https://github.com/nonDeveloper0/Notium-site/issues">GitHub Issues로 문의하기</a>
-        </p>
-        <p class="muted">
-          공개 문의에는 노트 내용, 비밀번호, 인증 토큰 등 개인정보를 올리지 마세요.
-        </p>
+        <h2>문의</h2><p>운영자: nonDeveloper0</p>
+        <p><a href="https://github.com/nonDeveloper0/Notium-releases/issues">GitHub Issues로 문의하기</a></p>
+        <p class="muted">공개 문의에는 노트 내용, 비밀번호, 인증 토큰 등 개인정보를 올리지 마세요.</p>
       </section>
     </main>
-    <footer>
-      <span>© 2026 Notium</span><a href="privacy.html">개인정보처리방침</a
-      ><a href="terms.html">이용약관</a>
-    </footer>
+    <footer><span>© 2026 Notium</span><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="data-deletion.html">데이터 삭제</a></footer>
   </body>
 </html>

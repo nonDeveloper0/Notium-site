@@ -183,6 +183,16 @@ aside {
   font-size: 14px;
   margin-block: 28px;
 }
+blockquote {
+  margin: 24px 0;
+  padding: 18px 22px;
+  border-left: 3px solid var(--accent);
+  background: #f0f2f0;
+  font-size: 14px;
+}
+.document ol {
+  padding-left: 24px;
+}
 code {
   font-size: 13px;
   overflow-wrap: anywhere;
