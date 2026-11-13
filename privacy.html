@@ -11,7 +11,7 @@
       <h2>1. 처리하는 정보와 목적</h2>
       <ul>
         <li><strong>노트·첨부·설정:</strong> 페이지, 폴더, 블록, 태그, 속성, 일지, 할 일, 첨부와 앱 설정을 작성·정리·검색·표시하기 위해 처리합니다.</li>
-        <li><strong>클라우드 계정 정보(선택):</strong> Google 또는 Microsoft로 연결할 때 계정 식별 정보를 연결 확인과 연결 상태 표시에 사용합니다. Google 로그인에서는 이메일도 받습니다. 비밀번호는 Notium이 받지 않습니다.</li>
+        <li><strong>클라우드 계정 정보(선택):</strong> Google로 연결할 때 계정 식별 정보를 연결 확인과 연결 상태 표시에 사용합니다. Google 로그인에서는 이메일도 받습니다. 비밀번호는 Notium이 받지 않습니다.</li>
         <li><strong>동기화 데이터(선택):</strong> 노트 변경 이벤트, 스냅샷, 첨부 원본, 기기 이름·플랫폼·마지막 접속 시각을 사용자가 연결한 기기 사이에 동기화합니다.</li>
         <li><strong>AI 작업 기록(선택, Windows 데스크톱):</strong> 사용자가 연결한 AI 앱의 작업 결과를 기기 안에 기록하고 앱의 AI 작업 기록에 표시합니다.</li>
         <li><strong>문의 정보:</strong> 공개 GitHub Issues에 사용자가 작성한 내용은 문의에 답하고 문제를 파악하는 데 이용될 수 있습니다.</li>
@@ -20,24 +20,21 @@
       <p>노트의 실행 데이터는 기기의 SQLite 데이터베이스와 파일에 저장됩니다. 동기화를 켜면 동기화 데이터가 사용자가 고른 위치에 저장됩니다.</p>
       <ul>
         <li><strong>Google Drive:</strong> 사용자 본인 Drive의 앱 전용 숨김 공간(appDataFolder)</li>
-        <li><strong>Microsoft OneDrive:</strong> 사용자 본인 OneDrive의 앱 폴더(<code>Apps/Notium</code>)</li>
         <li><strong>로컬 폴더(Windows):</strong> 사용자가 직접 고른 폴더. 폴더가 다른 클라우드 서비스와 동기화되면 그 서비스의 정책이 적용됩니다.</li>
       </ul>
       <p>운영자는 이 데이터의 사본을 보관하지 않습니다. AI 작업 기록과 앱 로그도 기기 안에만 저장됩니다.</p>
-      <p>로컬 데이터는 사용자가 앱에서 삭제하거나 기기의 앱 데이터를 지울 때까지 남습니다. 클라우드나 폴더의 동기화 데이터는 사용자가 직접 지울 때까지 남습니다. Google·Microsoft 서비스 자체의 처리와 보관에는 각 회사의 정책이 적용됩니다.</p>
+      <p>로컬 데이터는 사용자가 앱에서 삭제하거나 기기의 앱 데이터를 지울 때까지 남습니다. 클라우드나 폴더의 동기화 데이터는 사용자가 직접 지울 때까지 남습니다. Google 서비스 자체의 처리와 보관에는 Google의 정책이 적용됩니다.</p>
       <h2>3. 클라우드 연결과 권한</h2>
       <p>클라우드 연결은 선택 기능입니다. 앱은 다음 권한을 각 목적에만 사용합니다.</p>
       <p><strong>Google</strong></p>
       <ul><li><code>openid</code>: Google 계정 로그인 사용자를 확인합니다.</li><li><code>email</code>: 로그인 계정을 표시하고 연결 상태를 구분합니다.</li><li><code>https://www.googleapis.com/auth/drive.appdata</code>: 사용자 본인의 Drive에 있는 Notium 전용 숨김 공간에 동기화 파일을 읽고 씁니다. 사용자의 다른 Drive 파일을 읽거나 변경할 수 있는 권한은 요청하지 않습니다.</li></ul>
-      <p><strong>Microsoft</strong></p>
-      <ul><li><code>Files.ReadWrite.AppFolder</code>: 사용자 OneDrive의 Notium 앱 폴더에 동기화 파일을 읽고 씁니다. 다른 OneDrive 파일에는 접근하지 않습니다.</li><li><code>User.Read</code>: 로그인한 계정을 확인하고 연결 상태를 표시합니다.</li><li><code>offline_access</code>: 다시 로그인하지 않아도 동기화가 이어지도록 갱신 토큰을 받습니다.</li></ul>
-      <p>인증 토큰은 Windows 자격 증명 관리자 또는 Android Keystore 등 기기의 OS 보안 저장소에 보관합니다. 앱에서 동기화 연결을 해제하면 기기에 저장된 토큰을 삭제합니다. Google은 이때 Google 서버의 접근 권한도 취소하고, OneDrive는 Microsoft 계정 설정에서 권한을 직접 제거해야 합니다. 연결을 해제해도 원격 동기화 데이터는 삭제되지 않습니다.</p>
+      <p>인증 토큰은 Windows 자격 증명 관리자 또는 Android Keystore 등 기기의 OS 보안 저장소에 보관합니다. 앱에서 동기화 연결을 해제하면 기기에 저장된 토큰을 삭제합니다. 이때 Google 서버의 접근 권한도 함께 취소합니다. 연결을 해제해도 원격 동기화 데이터는 삭제되지 않습니다.</p>
       <h2>4. Google API Services User Data Policy — Limited Use</h2>
       <p>Notium은 Google API Services User Data Policy의 Limited Use 요구사항을 준수합니다. Google 데이터는 앱 화면에서 눈에 띄게 제공되는 기능을 제공하거나 개선하는 데만 사용합니다. 광고, 판매, 사용자 추적 또는 범용 AI 모델 학습에 사용하지 않습니다. 사람의 열람이나 제3자 전송은 정책이 허용하는 경우에만 이뤄집니다.</p>
       <blockquote>Notium's use and transfer to any other app of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements.</blockquote>
       <p><a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy 전문</a></p>
       <h2>5. 제3자 제공</h2>
-      <p>운영자는 노트나 클라우드 계정 데이터를 제3자에게 제공하지 않습니다. 동기화가 켜진 경우 데이터는 사용자의 Google 또는 Microsoft 계정, 또는 사용자가 고른 폴더에 저장됩니다. 앱은 HTTPS로 Google·Microsoft API와 통신합니다.</p>
+      <p>운영자는 노트나 클라우드 계정 데이터를 제3자에게 제공하지 않습니다. 동기화가 켜진 경우 데이터는 사용자의 Google 계정 또는 사용자가 고른 폴더(Windows)에 저장됩니다. 앱은 HTTPS로 Google API와 통신합니다.</p>
       <h2>6. AI 연결 (Windows 데스크톱)</h2>
       <p>Notium은 이 PC에서 로컬 MCP 서버를 실행합니다. 사용자가 연결하면 앱이 AI 앱 자신의 설정 파일에 Notium 항목을 추가합니다. 지원하는 AI 앱은 다음과 같습니다.</p>
       <ul><li>Claude Desktop</li><li>Claude Code</li><li>Codex</li><li>Cursor</li><li>VS Code Copilot</li><li>Gemini CLI</li></ul>
@@ -53,7 +50,7 @@
       <h2>10. 보안</h2>
       <p>앱 데이터는 기기에 저장되며 인증 토큰은 OS 보안 저장소에 보관합니다. 클라우드와의 통신은 HTTPS를 사용합니다. 기기 잠금과 백업 보안은 사용자가 관리해야 합니다. 노트 콘텐츠의 종단 간 암호화를 제공한다고 보장하지 않습니다.</p>
       <h2>11. 사용자의 권리</h2>
-      <p>사용자는 자신의 데이터를 언제든 앱에서 보고, 내보내고, 삭제할 수 있습니다. 클라우드 권한은 Google 또는 Microsoft 계정 설정에서 철회할 수 있습니다. 운영자가 사용자 데이터를 갖고 있지 않으므로 열람·정정·삭제는 사용자가 직접 처리합니다.</p>
+      <p>사용자는 자신의 데이터를 언제든 앱에서 보고, 내보내고, 삭제할 수 있습니다. 클라우드 권한은 Google 계정 설정에서 철회할 수 있습니다. 운영자가 사용자 데이터를 갖고 있지 않으므로 열람·정정·삭제는 사용자가 직접 처리합니다.</p>
       <h2>12. 방침 변경</h2>
       <p>처리 방식이 바뀌면 이 페이지와 시행일을 갱신합니다.</p>
       <h2>13. 문의</h2>
